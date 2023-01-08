@@ -3,6 +3,11 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
-
+    <!--静态工厂方法配置-->
     <bean id="clientService" class="examples.ClientService" factory-method="createInstance"/>
+
+    <!--实例工厂方法配置-->
+    <bean id="serviceLocator" class="examples.DefaultServiceLocator"/>
+    <bean id="first" factory-bean="serviceLocator" factory-method="createFirstInstance"/>
+    <bean id="second" factory-bean="serviceLocator" factory-method="createSecondInstance"/>
 </beans>
