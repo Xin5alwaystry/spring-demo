@@ -9,7 +9,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class StaticFactoryMethodDemo {
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("client.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("factory-method.xml");
         Object clientService = context.getBean("clientService");
         System.out.println(clientService);
     }
