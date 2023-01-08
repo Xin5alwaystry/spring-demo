@@ -13,10 +13,10 @@ import org.springframework.samples.jpetstore.services.PetStoreServiceImpl;
  */
 public class Demo {
     public static void main(String[] args) {
-        //ApplicationContext context = new ClassPathXmlApplicationContext("services.xml");
-        GenericApplicationContext context = new GenericApplicationContext();
-        new XmlBeanDefinitionReader(context).loadBeanDefinitions("services.xml");
-        context.refresh();
+        ApplicationContext context = new ClassPathXmlApplicationContext("services.xml");
+        //GenericApplicationContext context = new GenericApplicationContext();
+        //new XmlBeanDefinitionReader(context).loadBeanDefinitions("services.xml");
+        //context.refresh();
         PetStoreServiceImpl bean = context.getBean(PetStoreServiceImpl.class);
         System.out.println(bean);
     }
